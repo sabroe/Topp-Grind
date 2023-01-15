@@ -92,7 +92,7 @@ public class Tasks {
     }
 
     /**
-     * Log a "hello" to the Gradle logger.
+     * Logs a "hello" to the Gradle logger.
      * This may be used to indicate the presence of a task and it being run.
      * @param task Task task.
      */
