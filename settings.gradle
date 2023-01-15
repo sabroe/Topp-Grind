@@ -1,0 +1,3 @@
+rootProject.name = 'Yelstream Topp Grind Gradle Library Project'
+
+include 'Topp-Grind-Gradle-Grinder-Library'

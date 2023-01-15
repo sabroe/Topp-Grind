@@ -1,0 +1,28 @@
+/**
+ * .
+ */
+module com.yelstream.topp.grind.gradle {
+    requires static lombok;
+
+//    requires org.gradle.api;
+
+/*
+    requires jakarta.annotation;
+    requires jakarta.activation;
+    requires com.sun.activation.registries;
+    requires jakarta.xml.bind;
+    requires com.sun.xml.bind.core;
+    requires com.sun.xml.bind;
+//    requires com.sun.tools.jxc;
+*/
+
+/*
+    exports org.gradle.api;
+    exports org.gradle.api.file;
+    exports org.gradle.api.plugins;
+    exports org.gradle.api.tasks;
+*/
+
+    exports com.yelstream.topp.format.util;
+    exports com.yelstream.topp.gradle.api;
+}

@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "org.sonarqube" version "3.5.0.2730" apply false
+    id "checkstyle"
+    id "jacoco"
+}
+
+def fragmentDir = "${rootProject.projectDir}/gradle/fragment"
+apply from: "${fragmentDir}/custom-properties.gradle"
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+    apply from: "${fragmentDir}/project-report.gradle"
+}
+
+subprojects {
+    apply from: "${fragmentDir}/checkstyle.gradle"
+    apply from: "${fragmentDir}/jacoco.gradle"
+    apply from: "${fragmentDir}/java-options.gradle"
+    apply from: "${fragmentDir}/java-jars.gradle"
+    apply from: "${fragmentDir}/jar-manifest.gradle"
+    apply from: "${fragmentDir}/archive-naming.gradle"
+    apply from: "${fragmentDir}/publish.gradle"
+    apply from: "${fragmentDir}/sonarqube.gradle"
+    apply from: "${fragmentDir}/lombok.gradle"
+    apply from: "${fragmentDir}/junit.gradle"
+}
+
+/*
+ Note:
+    To get a page with report links, consider executing this:
+    $ find . -name "*.html" | grep -E "/build/(docs|reports)/[^.]+/[[:alnum:]]+[.]html"
+ */
