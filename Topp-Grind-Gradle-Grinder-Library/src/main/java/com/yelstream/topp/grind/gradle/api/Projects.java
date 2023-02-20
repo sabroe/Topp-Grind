@@ -3,12 +3,13 @@ package com.yelstream.topp.grind.gradle.api;
 import com.yelstream.topp.format.util.PropertiesFormatter;
 import lombok.experimental.UtilityClass;
 import org.gradle.api.Project;
+import org.gradle.api.logging.LogLevel;
 import org.gradle.api.logging.Logger;
 
 import java.util.Map;
 
 /**
- * Utilities addressing instance of {@link Project}.
+ * Utilities addressing instances of {@link Project}.
  *
  * @author Morten Sabroe Mortenen
  * @version 1.0
@@ -36,11 +37,24 @@ public class Projects {
      */
     public static <V> void logProjectProperties(Project project,
                                                 Map<String,V> projectProperties) {
+        logProjectProperties(project,projectProperties,LogLevel.DEBUG);
+    }
+
+    /**
+     * Logs project properties.
+     * @param project Project.
+     * @param projectProperties Project properties.
+     * @param <V> Type of project property value.
+     * @param level Level.
+     */
+    public static <V> void logProjectProperties(Project project,
+                                                Map<String,V> projectProperties,
+                                                LogLevel level) {
         Logger logger=project.getLogger();
-        if (logger.isInfoEnabled()) {
+        if (logger.isEnabled(level)) {
             PropertiesFormatter formatter=PropertiesFormatter.builder().build();
             String formattedProjectProperties=formatter.format(projectProperties);
-            logger.info(String.format("Project properties are:%n%s",formattedProjectProperties));
+            logger.log(level,String.format("Project properties are:%n%s",formattedProjectProperties));
         }
     }
 }

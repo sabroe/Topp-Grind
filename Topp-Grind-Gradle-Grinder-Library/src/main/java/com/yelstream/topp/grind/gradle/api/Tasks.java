@@ -4,6 +4,7 @@ import com.yelstream.topp.format.util.PropertiesFormatter;
 import lombok.experimental.UtilityClass;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.logging.LogLevel;
 import org.gradle.api.logging.Logger;
 
 import java.util.HashMap;
@@ -71,13 +72,25 @@ public class Tasks {
      */
     public static <V> void logTaskProperties(Task task,
                                              Map<String,V> taskProperties) {
-        Project project=task.getProject();
-        Logger logger=project.getLogger();
-        if (logger.isInfoEnabled()) {
+        logTaskProperties(task,taskProperties,LogLevel.DEBUG);
+    }
+
+    /**
+     * Logs task properties.
+     * @param task Task.
+     * @param taskProperties Task properties.
+     * @param <V> Type of task property value.
+     * @param level Log level.
+     */
+    public static <V> void logTaskProperties(Task task,
+                                             Map<String,V> taskProperties,
+                                             LogLevel level) {
+        Logger logger=task.getLogger();
+        if (logger.isEnabled(level)) {
             String taskKeyPrefix= getTaskPropertyKeyPrefix(task);
             PropertiesFormatter formatter=PropertiesFormatter.builder().build();
             String formattedTaskProperties=formatter.format(taskProperties);
-            logger.info(String.format("Task properties are (project properties with keys with prefix '%s'):%n%s",taskKeyPrefix,formattedTaskProperties));
+            logger.log(level,String.format("Task properties are (project properties with keys with prefix '%s'):%n%s",taskKeyPrefix,formattedTaskProperties));
         }
     }
 
@@ -97,11 +110,10 @@ public class Tasks {
      * @param task Task task.
      */
     public static void logHello(Task task) {
-        Project project=task.getProject();
-        Logger logger=project.getLogger();
+        Logger logger=task.getLogger();
         if (logger.isInfoEnabled()) {
             String taskName=task.getName();
-            logger.info(String.format("Hello, %s!",taskName));
+            logger.debug(String.format("Hello, %s!",taskName));
         }
     }
 

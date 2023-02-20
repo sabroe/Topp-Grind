@@ -12,4 +12,6 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.6'
 
     api gradleApi()
+
+    implementation 'io.github.sabroe.topp:topp-tiny-net-utility:0.8.0'
 }
