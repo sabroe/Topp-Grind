@@ -16,7 +16,7 @@ Artifacts are released to the [Maven Central Repository](https://search.maven.or
 
 For the latest version,
 search
-[_Group ID_ `io.github.sabroe.topp` and _Artifact ID_ `topp-grind-gradle-grinder-utility`](https://search.maven.org/search?q=g:io.github.sabroe.topp%20AND%20a:topp-grind-gradle-grinder-utility).
+[_Group ID_ `io.github.sabroe.topp-grind` and _Artifact ID_ `topp-grind-gradle-grinder-utility`](https://search.maven.org/search?q=g:io.github.sabroe.topp-grind%20AND%20a:topp-grind-gradle-grinder-utility).
 
 ---
 
