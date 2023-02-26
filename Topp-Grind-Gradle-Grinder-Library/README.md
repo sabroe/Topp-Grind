@@ -1,10 +1,10 @@
-# Topp JAXB Binding Library
+# Topp Grind Gradle Grinder Library
 
-Module: `topp-jaxb-binding-utility`
+Module: `topp-grind-gradle-grinder-utility`
 
 ## Description
 
-Topp JAXB IO is an open-source Java library which implements utilities related to the input/output of XML.
+Topp Grinder is a utility library for the Gradle API.
 
 ## Content
 
@@ -16,7 +16,7 @@ Artifacts are released to the [Maven Central Repository](https://search.maven.or
 
 For the latest version,
 search
-[_Group ID_ `io.github.sabroe.topp` and _Artifact ID_ `topp-xml-io-utility`](https://search.maven.org/search?q=g:io.github.sabroe.topp%20AND%20a:topp-xml-io-utility).
+[_Group ID_ `io.github.sabroe.topp` and _Artifact ID_ `topp-grind-gradle-grinder-utility`](https://search.maven.org/search?q=g:io.github.sabroe.topp%20AND%20a:topp-grind-gradle-grinder-utility).
 
 ---
 
