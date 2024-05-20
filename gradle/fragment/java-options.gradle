@@ -11,8 +11,13 @@ plugins.withType(JavaPlugin) {
 
     java {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(custom['java.language-version']?:'17')
+            languageVersion = JavaLanguageVersion.of(custom['java.language-version']?:'21')
         }
+    }
+
+    javadoc {
+        failOnError = false
+        options.encoding = defaultEncoding
     }
 }
 

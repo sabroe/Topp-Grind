@@ -4,7 +4,7 @@ Utility libraries for the Gradle API.
 
 ## Description
 
-Topp Grind is a collection of utility libraries addressing thr Gradle API.
+Topp Grind is a collection of utility libraries addressing the Gradle API.
 As of now, a collection of one.
 
 ## Content

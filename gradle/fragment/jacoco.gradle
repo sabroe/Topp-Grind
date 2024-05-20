@@ -1,6 +1,6 @@
 plugins.withType(JacocoPlugin) {
     jacoco {
-        toolVersion = "0.8.8"
+        toolVersion = "0.8.11"
 //          reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
     }
     test {

@@ -1,0 +1,24 @@
+tasks.withType(JavaCompile) {
+    apply plugin: "de.obqo.decycle"
+
+    decycle {
+/*
+        sourceSets sourceSets.main, sourceSets.test, ...
+        including 'org.example.includes.**', ...
+        excluding 'org.example.excludes.**', ...
+        ignoring from: 'org.examples.from.Example', to: 'org.examples.to.**'
+        slicings {
+            name1 {
+                patterns 'org.example.{*}.**', ...
+                allow 'a', 'b', ...
+                allowDirect 'x', anyOf('y', 'z'), ...
+            }
+            name2 {
+                ...
+            }
+        }
+*/
+        ignoreFailures false
+        reportsEnabled true
+    }
+}

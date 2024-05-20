@@ -15,6 +15,7 @@ import org.gradle.api.tasks.SourceSet;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -467,13 +468,13 @@ public class ResourceFactory {
      *         This is never {@code null}.
      * @throws MalformedURLException Thrown in case of URL being malformed.
      */
-    public URL url(Object reference) throws MalformedURLException {
+    public URL url(Object reference) throws MalformedURLException, URISyntaxException {
         URL resolved;
         if (reference==null) {
             throw new IllegalArgumentException("Failure to resolve URI; name is not set!");
         }
         if (reference instanceof String name) {
-            resolved=new URL(name);
+            resolved=new URI(name).toURL();
         } else {
             if (reference instanceof File file) {
                 resolved=resolve(file).toPath().toUri().toURL();
